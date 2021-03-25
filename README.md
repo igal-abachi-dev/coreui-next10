@@ -58,8 +58,22 @@ Check out demo of components usage: [CoreUI React Admin Template »](https://cor
 Before installation you need to install [node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
 ```shell
 npm install @coreui/react
+
+
+rem local:
+npm install file:coreui-nextjs-3.4.6.tgz
+
+rem from cdn:
+npm install http://0.0.0.0/coreui-nextjs-3.4.6
 ```
 
+usage:
+
+```
+import {
+  CButton,
+} from '@coreui/nextjs';
+```
 #### Styling
 
 Components are styled using @coreui/coreui CSS library, but you can use them also with bootstrap CSS library. That is possible because @coreui/coreui library is compatible with bootstrap, it just extends its functionalities. The only exception is custom CoreUI components, which don't exist in the Bootstrap ecosystem (template components, callout, switch).
