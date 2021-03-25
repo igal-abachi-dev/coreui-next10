@@ -14,7 +14,23 @@
 [npm-coreui-react-badge-next]: https://img.shields.io/npm/v/@coreui/react/next?style=flat-square
 [coreui]: https://coreui.io/react
 
-##### @coreui/react v3 for [CoreUI 3 for React](https://coreui.io/react/)
+##### @coreui/react v3 for [CoreUI 3 for NEXT.js](https://coreui.io/react/)
+
+affected components for compatibility with next:
+CDataTable.js (used css modules inside node_modules , now refs: CDataTableIcon.css)
+
+
+used react-router-dom , now uses next/router and next/link:
+CBreadcrumbRouter.js 
+CLink.js
+CSidebarNavItem.js
+(i used some logic from NavLink component, and react-router-dom matchPath / path-to-regexp)
+
+
+had circular reference with index.js, fixed with local refs:
+CProgress.js
+CProgressBar.js
+CSidebarNavDropdown.js
 
 ###### Over 90 bootstrap based React components and directives
 
