@@ -4,7 +4,7 @@ import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 
-const external = ['react', 'react-dom', 'react-router-dom', 'react-dom/server']
+const external = ['react', 'react-dom', 'next', 'react-dom/server']
 // const external = id => id.includes('@babel/runtime')
 
 const plugins = [
@@ -21,7 +21,7 @@ const plugins = [
     // jsnext: true,
     // preferBuiltins: false,
     extensions: ['.js', '.json', '.jsx'],
-    dedupe: ['react', 'react-dom', 'react-router-dom', 'react-dom/server']
+    dedupe: ['react', 'react-dom', 'next', 'react-dom/server']
   }),
   commonjs(),
   postcss()
@@ -32,7 +32,7 @@ const rollupConfig = {
   output: {
     file: `./lib/index.js`,
     format: 'cjs',
-    name: 'coreui-react'
+    name: 'coreui-nextjs'
   },
   external,
   plugins

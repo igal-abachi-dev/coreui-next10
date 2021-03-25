@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+return;
 
 const pkg = require(require('path').resolve('./package.json'))
 
@@ -43,8 +44,8 @@ log(`${VERSIONS[pkg.name].name} is an MIT licensed open source project and ` +
 log('\x1b[39m')
 
 const isFramework = VERSIONS[pkg.name].name !== '@coreui/coreui'
-const haveStyles = packageJson && 
-  packageJson.dependencies && 
+const haveStyles = packageJson &&
+  packageJson.dependencies &&
     (
       packageJson.dependencies['@coreui/coreui'] ||
       packageJson.dependencies['@coreui/coreui-pro']

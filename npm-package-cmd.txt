@@ -1,0 +1,21 @@
+npm install
+npm run build
+
+
+del coreui-nextjs-3.4.6.tgz
+
+npm pack
+to <pkg_name>-<pkg_ver>.tgz
+
+local:
+npm install file:coreui-nextjs-3.4.6.tgz
+
+from cdn:
+npm install http://0.0.0.0/coreui-nextjs-3.4.6
+
+
+on proj:
+
+import {
+  CButton,
+} from '@coreui/nextjs';

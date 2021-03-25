@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { Context } from './CProgress'
+//import { Context } from './CProgress'
 //component - CoreUI / CProgressBar
+
+export const Context = React.createContext({})
 
 const CProgressBar = directProps => {
 

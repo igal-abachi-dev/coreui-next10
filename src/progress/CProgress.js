@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import CProgressBar from './CProgressBar'
 
-export const Context = React.createContext({})
 //component - CoreUI / CProgress
 
 const CProgress = props => {
@@ -37,16 +36,16 @@ const CProgress = props => {
   }
 
   const progressClasses = classNames(
-    'progress', 
+    'progress',
     size && 'progress-' + size,
     className
   )
 
   // render
   return (
-    <div 
-      className={progressClasses} 
-      {...attributes} 
+    <div
+      className={progressClasses}
+      {...attributes}
       ref={innerRef}
     >
       <Context.Provider value={{ inheritedProps }}>

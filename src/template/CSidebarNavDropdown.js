@@ -8,7 +8,7 @@ import React, {
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import CIcon from '@coreui/icons-react'
-import { useLocation } from 'react-router-dom'
+import { useRouter } from 'next/router';
 
 import { Context } from './CSidebar'
 export const DropdownContext = React.createContext({})
@@ -67,7 +67,7 @@ const CSidebarNavDropdown = props => {
 
   let path = ''
   try {
-    path = useLocation().pathname
+    path = useRouter().pathname
   } catch (e) {
     console.warn(e)
   }
@@ -89,20 +89,20 @@ const CSidebarNavDropdown = props => {
     isOpen && 'c-show',
     className
   )
-      
+
   const iconClasses = classNames(
     'c-sidebar-nav-icon',
     fontIcon
   )
 
   return (
-    <li 
-      className={classes} 
-      {...attributes} 
+    <li
+      className={classes}
+      {...attributes}
       ref={ref}
     >
       <a
-        className="c-sidebar-nav-dropdown-toggle" 
+        className="c-sidebar-nav-dropdown-toggle"
         tabIndex="0"
         onClick={toggle}
         aria-label="menu dropdown"

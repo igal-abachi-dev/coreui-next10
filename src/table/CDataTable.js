@@ -5,7 +5,7 @@ import CPagination from '../pagination/CPagination'
 import CElementCover from '../element-cover/CElementCover'
 import CIcon from '@coreui/icons-react'
 import { cilArrowTop, cilBan, cilFilterX } from '@coreui/icons'
-import style from './CDataTable.module.css'
+import iconStyle from './CDataTableIcon.css'
 import './CDataTable.css'
 
 //component - CoreUI / CTable
@@ -99,7 +99,7 @@ const CDataTable = props => {
 
   const isSortable = i => {
     const isDataColumn = itemsDataColumns.includes(rawColumnNames[i])
-    return sorter && (!fields || fields[i].sorter !== false) && isDataColumn 
+    return sorter && (!fields || fields[i].sorter !== false) && isDataColumn
   }
 
   const headerStyles = (index) => {
@@ -121,9 +121,9 @@ const CDataTable = props => {
   const iconClasses = index => {
     const state = getIconState(index)
     return [
-      'position-absolute', style['icon-transition'], style['arrow-position'],
-      !state && style['transparent'],
-      state === 'desc' && style['rotate-icon']
+      'position-absolute', iconStyle['icon-transition'], iconStyle['arrow-position'],
+      !state && iconStyle['transparent'],
+      state === 'desc' && iconStyle['rotate-icon']
     ]
   }
 
@@ -249,7 +249,7 @@ const CDataTable = props => {
     tableFilterState,
     JSON.stringify(tableFilter)
   ])
-  
+
   const sortedItems = useMemo(() => {
     const col = sorterState.column
     if (!col || !itemsDataColumns.includes(col) || (sorter && sorter.external)) {
@@ -266,8 +266,8 @@ const CDataTable = props => {
     })
     return sorted
   }, [
-    JSON.stringify(tableFiltered), 
-    JSON.stringify(sorterState), 
+    JSON.stringify(tableFiltered),
+    JSON.stringify(sorterState),
     JSON.stringify(sorter)
   ])
 
@@ -340,7 +340,7 @@ const CDataTable = props => {
   })()
 
   const isFiltered = tableFilterState || sorterState.column ||
-                     Object.values(columnFilterState).join('')   
+                     Object.values(columnFilterState).join('')
 
   const cleanerProps = {
     content: cilFilterX,
@@ -441,7 +441,7 @@ const CDataTable = props => {
               />
             )
           }
-          
+
         </div>
       }
       {
@@ -574,9 +574,9 @@ const CDataTable = props => {
     { footerSlot }
     { captionSlot }
   </table>
-  { loading && 
-    (loadingSlot || 
-    <CElementCover 
+  { loading &&
+    (loadingSlot ||
+    <CElementCover
       boundaries={[
         { sides: ['top'], query: 'td' },
         { sides: ['bottom'], query: 'tbody' }

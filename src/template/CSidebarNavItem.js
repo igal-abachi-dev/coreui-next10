@@ -1,7 +1,8 @@
 import React, { isValidElement, useContext } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { CLink, CBadge } from '../index'
+import CLink  from '../link/CLink'
+import CBadge  from '../badge/CBadge'
 import CIcon from '@coreui/icons-react'
 import { iconProps } from './CSidebarNavDropdown'
 
@@ -40,7 +41,7 @@ const CSidebarNavItem = props => {
   const routerLinkProps = rest.to && { exact: true, activeClassName: 'c-active' }
   return (
     <li className={classes} ref={innerRef}>
-      { children || 
+      { children ||
         <CLink
           className={linkClasses}
           {...routerLinkProps}
