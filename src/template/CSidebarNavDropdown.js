@@ -7,7 +7,7 @@ import React, {
 } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import CIcon from '@coreui/icons-react'
+import CIcon from '@coreui/icons-nextjs'
 import { useRouter } from 'next/router';
 
 import { Context } from './CSidebar'

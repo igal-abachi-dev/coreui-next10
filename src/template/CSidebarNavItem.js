@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import CLink  from '../link/CLink'
 import CBadge  from '../badge/CBadge'
-import CIcon from '@coreui/icons-react'
+import CIcon from '@coreui/icons-nextjs'
 import { iconProps } from './CSidebarNavDropdown'
 
 import { DropdownContext } from './CSidebarNavDropdown'

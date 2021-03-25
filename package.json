@@ -46,7 +46,7 @@
   "dependencies": {
     "@babel/runtime": "^7.13.10",
     "@coreui/icons": "^2.0.0-rc.0",
-    "@coreui/icons-react": "^1.1.0",
+    "@coreui/icons-nextjs": "file:coreui-icons-nextjs-1.1.0.tgz",
     "@coreui/utils": "~1.3.1",
     "@popperjs/core": "^2.9.1",
     "classnames": "~2.2.6",
