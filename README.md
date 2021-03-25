@@ -67,6 +67,10 @@ npm install file:coreui-nextjs-3.4.6.tgz
 npm install http://0.0.0.0/coreui-nextjs-3.4.6
 ```
 
+coreui-icons-nextjs-1.1.0.tgz , from here:
+https://github.com/igal-abachi-dev/coreui-icons-next10
+
+
 usage:
 
 ```
