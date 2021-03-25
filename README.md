@@ -57,13 +57,13 @@ Check out demo of components usage: [CoreUI React Admin Template »](https://cor
 
 Before installation you need to install [node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
 ```shell
-npm install @coreui/react
 
+ local:
+copy coreui-nextjs-3.4.6.tgz from here to near project files
 
-rem local:
 npm install file:coreui-nextjs-3.4.6.tgz
 
-rem from cdn:
+ from cdn:
 npm install http://0.0.0.0/coreui-nextjs-3.4.6
 ```
 
