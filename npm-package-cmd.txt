@@ -19,3 +19,8 @@ on proj:
 import {
   CButton,
 } from '@coreui/nextjs';
+
+
+package cache:
+%AppData%/npm-cache
+sig on package-lock.json
