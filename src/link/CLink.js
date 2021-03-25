@@ -37,10 +37,16 @@ const CLink = props => {
     className
   )
 
-    const NavLink = ({ children, activeClassName = "active", ...props }) => {
+    const NavLink = ({ description = "link", activeClassName = "active", ...props }) => {
         const { asPath, pathname } = useRouter();
-        const child = Children.only(children)
-        const childClassName = child.props.className || ''
+         let childClassName ='';
+        // try {
+        //     const child = Children.only(children)
+        //     childClassName = child.props.className || ''
+        // }catch{
+        //
+        // }
+
 
         // pages/index.js will be matched via props.href
         // pages/about.js will be matched via props.href
@@ -57,7 +63,7 @@ const CLink = props => {
                     {/*className: className || null,*/}
                 {/*})}*/}
 
-                <a style={{textDecoration:"none"}} className={className || null}>{child}</a>
+                <a style={{textDecoration:"none"}} className={className || null}>{description}</a>
             </Link>
         )
     }
@@ -97,6 +103,7 @@ const CLink = props => {
       href = {escapedPath}
 //      as = {escapedPath}
       activeClassName={rest.activeClassName || 'active'}
+      description={"link"}
       className={classes}
       onClick={click}
       ref={innerRef}
