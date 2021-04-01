@@ -17,7 +17,7 @@
 ##### @coreui/react v3 for [CoreUI 3 for NEXT.js](https://coreui.io/react/)
 
 ### demo:
-next project:
+next.js project template:
 
 https://github.com/igal-abachi-dev/next10-coreui-test
 
