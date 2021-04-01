@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import CFade from '../fade/CFade'
 import { omitByKeys } from '@coreui/utils/src'
 import { CFadeProps } from '../utils/helper.js'
-import './CToast.css'
+//import './CToast.css'
 
 export const Context = React.createContext({})
 
@@ -101,7 +101,7 @@ const CToast = props => {
     <Context.Provider value={{ close }}>
       {
         state && <CFade
-          className={classes}   
+          className={classes}
           role="alert"
           aria-live="assertive"
           aria-atomic="true"
@@ -114,7 +114,7 @@ const CToast = props => {
         >
           {children}
         </CFade>
-      }  
+      }
     </Context.Provider>
   )
 }

@@ -5,8 +5,6 @@ import CPagination from '../pagination/CPagination'
 import CElementCover from '../element-cover/CElementCover'
 import CIcon from '@coreui/icons-nextjs'
 import { cilArrowTop, cilBan, cilFilterX } from '@coreui/icons'
-import iconStyle from './CDataTableIcon.css'
-import './CDataTable.css'
 
 //component - CoreUI / CTable
 const CDataTable = props => {
@@ -121,9 +119,9 @@ const CDataTable = props => {
   const iconClasses = index => {
     const state = getIconState(index)
     return [
-      'position-absolute', iconStyle['icon-transition'], iconStyle['arrow-position'],
-      !state && iconStyle['transparent'],
-      state === 'desc' && iconStyle['rotate-icon']
+      'position-absolute', 'c-datatable-icon-transition', 'c-datatable-arrow-position',
+      !state && 'c-datatable-transparent',
+      state === 'desc' && 'c-datatable-rotate-icon'
     ]
   }
 

@@ -2,8 +2,8 @@ import React, { useState, createRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import PerfectScrollbar from 'perfect-scrollbar'
-import 'perfect-scrollbar/css/perfect-scrollbar.css'
-import './scrollbar.css'
+//import 'perfect-scrollbar/css/perfect-scrollbar.css'
+//import './scrollbar.css'
 
 //component - CoreUI / CScrollbar
 const CScrollbar = props => {
@@ -47,10 +47,10 @@ const CScrollbar = props => {
 
   // render
   return (
-    <Tag 
-      className={classNames(className)} 
-      style={{ position: 'relative' }} 
-      {...attributes} 
+    <Tag
+      className={classNames(className)}
+      style={{ position: 'relative' }}
+      {...attributes}
       ref={ref}
     />
   )

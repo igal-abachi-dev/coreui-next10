@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef, useCallback} from 'react'
 import PropTypes from 'prop-types'
 import tippy from 'tippy.js'
-import 'tippy.js/dist/tippy.css'
+//import 'tippy.js/dist/tippy.css'
 import { renderToString } from 'react-dom/server'
 
 //component - CoreUI / CTooltip
@@ -33,7 +33,7 @@ const CTooltip = props=>{
 
   const key = useState(Math.random().toString(36).substr(2))[0]
   const instance = useRef()
-  
+
   useEffect(() => {
     if (instance.current) {
       instance.current.setProps(config)

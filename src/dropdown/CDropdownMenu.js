@@ -37,7 +37,14 @@ const CDropdownMenu = props => {
     }
   )
 
-  useLayoutEffect(() => {
+    /*next error:
+     useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format.
+     //
+    Prefer the standard useEffect() when possible to avoid blocking visual updates.
+ we recommend starting with useEffect() first and only trying useLayoutEffect() if that causes a problem.
+    */
+    //useLayoutEffect(() => {
+  useEffect(() => {
     if (!reference) {
       return
     }
@@ -49,7 +56,7 @@ const CDropdownMenu = props => {
         modifiers: modifiers || []
       }
     ))
-   
+
     return () => {
       if (popper) {
         popper.destroy()
@@ -72,7 +79,7 @@ const CDropdownMenu = props => {
     }
     return () => {
       document.removeEventListener('click', checkClose)
-      document.removeEventListener('keydown', onKeypress) 
+      document.removeEventListener('keydown', onKeypress)
     }
   }, [isOpen])
 
