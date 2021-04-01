@@ -16,15 +16,21 @@
 
 ##### @coreui/react v3 for [CoreUI 3 for NEXT.js](https://coreui.io/react/)
 
-affected components for compatibility with next:
+1) affected components for compatibility with next:
 
 CDataTable.js 
 
-(used css modules inside node_modules , now refs: CDataTableIcon.css)
+CScrollbar.js
+
+CToast.js
+
+CTooltip.js
+
+(used css modules inside node_modules , now refs: there is exported styles.css for all needed styles)
 
 
 
-used react-router-dom , now uses next/router and next/link:
+2) used react-router-dom , now uses next/router and next/link:
 
 CBreadcrumbRouter.js 
 
@@ -36,13 +42,22 @@ CSidebarNavItem.js
 
 
 
-had circular reference with index.js, fixed with local refs:
+3) had circular reference with index.js, fixed with local refs:
 
 CProgress.js
 
 CProgressBar.js
 
 CSidebarNavDropdown.js
+
+
+4) used useLayoutEffect() now uses useEffect() in
+
+CDropdownMenu.js
+  
+
+
+
 
 
 ###### Over 90 bootstrap based React components and directives
