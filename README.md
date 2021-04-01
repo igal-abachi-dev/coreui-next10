@@ -163,6 +163,30 @@ body {
 	background-color: #ebedef
 }
 ```
+### dependencies:
+on library:
+```
+    "nwb": "^0.25.2",
+    "@coreui/icons": "^2.0.0-rc.0",
+    "@coreui/utils": "~1.3.1",
+    "@popperjs/core": "^2.9.1",
+    "classnames": "~2.2.6",
+    "core-js": "^3.9.1",
+    "path-to-regexp": "^6.2.0",
+    "perfect-scrollbar": "~1.5.0",
+    "react-transition-group": "~4.4.1",
+    "tippy.js": "^6.3.1"
+```
+on project:
+```
+    "next": "10.0.9",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.32.8",
+    "@coreui/coreui": "^3.4.0",
+    "@coreui/nextjs": "file:coreui-nextjs-3.4.6.tgz",
+```
+
 ### differences between coreui/nextjs & coreui/react:
 
 1) affected components for compatibility with next:
