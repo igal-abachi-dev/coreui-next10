@@ -16,6 +16,146 @@
 
 ##### @coreui/react v3 for [CoreUI 3 for NEXT.js](https://coreui.io/react/)
 
+
+### Installation
+
+Before installation you need to install [node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
+```shell
+
+ local:
+copy coreui-nextjs-3.4.6.tgz from here to near project files
+
+npm install file:coreui-nextjs-3.4.6.tgz
+
+ from cdn:
+npm install http://0.0.0.0/coreui-nextjs-3.4.6
+```
+
+coreui-icons-nextjs-1.1.0.tgz , from here:
+https://github.com/igal-abachi-dev/coreui-icons-next10
+
+
+
+coreui-nextjs-3.4.6.tgz
+
+https://github.com/igal-abachi-dev/coreui-next10
+
+
+### usage:
+inside index.tsx
+
+```
+import {
+  CBreadcrumbRouter,
+  CContainer,
+  CHeader,
+  CSidebar
+} from '@coreui/nextjs';
+
+
+  <div className={'c-app  c-default-layout'}>
+
+            <CBreadcrumbRouter
+                className="border-0 c-subheader-nav m-0 px-0 px-md-3"
+                routes={routes}
+            />
+            {/* <CSidebar/>*/}
+
+            <div className={'c-wrapper c-fixed-components'}>
+                <Head>
+                    <title>Create Next App</title>
+                    <link rel="icon" href="/favicon.ico"/>
+                </Head>
+                {/*<CHeader withSubheader>*/}
+
+                <div className={'c-body'}>
+                    <main className={'c-main'}>
+                        <CContainer fluid>
+                            <div className={'fade-in'}>
+```
+
+
+
+also in globals.scss:
+
+```
+@import "~@coreui/coreui/dist/css/coreui.min.css";
+@import "~@coreui/nextjs/es/styles.css";
+```
+
+default styles in globals.scss:
+```
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		sans-serif;
+}
+
+
+a {
+	text-decoration: none;
+	background-color: transparent;
+	color: #321fdb
+}
+
+@media (hover: hover),(-ms-high-contrast: none) {
+	a:hover {
+		text-decoration: underline;
+		color: #321fdb
+	}
+}
+
+a:not([href]) {
+	color: inherit;
+	text-decoration: none
+}
+
+@media (hover: hover),(-ms-high-contrast: none) {
+	a:not([href]):hover {
+		color: inherit;
+		text-decoration: none
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: sans-serif;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 21, 0)
+}
+
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	font-size: .875rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: left;
+	color: #3c4b64;
+	background-color: #ebedef
+}
+```
+### differences between coreui/nextjs & coreui/react:
+
 1) affected components for compatibility with next:
 
 CDataTable.js 
@@ -68,31 +208,7 @@ Check out demo of components usage: [CoreUI React Admin Template »](https://cor
 
 ![Template](https://coreui.io/images/github/vue-free-template-3.gif)
 
-### Installation
 
-Before installation you need to install [node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
-```shell
-
- local:
-copy coreui-nextjs-3.4.6.tgz from here to near project files
-
-npm install file:coreui-nextjs-3.4.6.tgz
-
- from cdn:
-npm install http://0.0.0.0/coreui-nextjs-3.4.6
-```
-
-coreui-icons-nextjs-1.1.0.tgz , from here:
-https://github.com/igal-abachi-dev/coreui-icons-next10
-
-
-usage:
-
-```
-import {
-  CButton,
-} from '@coreui/nextjs';
-```
 #### Styling
 
 Components are styled using @coreui/coreui CSS library, but you can use them also with bootstrap CSS library. That is possible because @coreui/coreui library is compatible with bootstrap, it just extends its functionalities. The only exception is custom CoreUI components, which don't exist in the Bootstrap ecosystem (template components, callout, switch).
