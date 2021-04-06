@@ -7,5 +7,5 @@ package-lock.json
 Thumbs.db
 *.lnk
 *.log
-*.tgz
+coreui-nextjs-3.4.6.tgz
 .git
