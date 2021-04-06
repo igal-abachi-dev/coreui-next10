@@ -1,4 +1,4 @@
-# CoreUI React components library
+# CoreUI NEXT.js 10 components library (react)
 
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=CoreUI%20-%20Free%20Vue%20Admin%20Template%20&url=http://coreui.io/react/&hashtags=bootstrap,admin,template,dashboard,panel,free,angular,react,vue)  
 [![npm_latest][npm-coreui-react-badge-latest]][npm-coreui-react]
@@ -16,42 +16,16 @@
 
 ##### @coreui/react v3 for [CoreUI 3 for NEXT.js](https://coreui.io/react/)
 
-affected components for compatibility with next:
+### demo:
+next.js project template:
 
-CDataTable.js 
-
-(used css modules inside node_modules , now refs: CDataTableIcon.css)
-
+https://github.com/igal-abachi-dev/next10-coreui-test
 
 
-used react-router-dom , now uses next/router and next/link:
+admin template:
 
-CBreadcrumbRouter.js 
+https://github.com/coreui/coreui-free-react-admin-template
 
-CLink.js
-
-CSidebarNavItem.js
-
-(i used some logic from NavLink component, and react-router-dom matchPath / path-to-regexp)
-
-
-
-had circular reference with index.js, fixed with local refs:
-
-CProgress.js
-
-CProgressBar.js
-
-CSidebarNavDropdown.js
-
-
-###### Over 90 bootstrap based React components and directives
-
-##### For library guide please visit our [Documentation site »](https://coreui.io/react/docs)
-
-Check out demo of components usage: [CoreUI React Admin Template »](https://coreui.io/react/demo)
-
-![Template](https://coreui.io/images/github/vue-free-template-3.gif)
 
 ### Installation
 
@@ -66,18 +40,211 @@ npm install file:coreui-nextjs-3.4.6.tgz
  from cdn:
 npm install http://0.0.0.0/coreui-nextjs-3.4.6
 ```
+uses npm packages:
 
 coreui-icons-nextjs-1.1.0.tgz , from here:
+
 https://github.com/igal-abachi-dev/coreui-icons-next10
 
 
-usage:
+
+coreui-nextjs-3.4.6.tgz
+
+https://github.com/igal-abachi-dev/coreui-next10
+
+
+### usage:
+inside index.tsx
 
 ```
 import {
-  CButton,
+  CBreadcrumbRouter,
+  CContainer,
+  CHeader,
+  CSidebar
 } from '@coreui/nextjs';
+
+
+  <div className={'c-app  c-default-layout'}>
+
+            <CBreadcrumbRouter
+                className="border-0 c-subheader-nav m-0 px-0 px-md-3"
+                routes={routes}
+            />
+            {/* <CSidebar/>*/}
+
+            <div className={'c-wrapper c-fixed-components'}>
+                <Head>
+                    <title>Create Next App</title>
+                    <link rel="icon" href="/favicon.ico"/>
+                </Head>
+                {/*<CHeader withSubheader>*/}
+
+                <div className={'c-body'}>
+                    <main className={'c-main'}>
+                        <CContainer fluid>
+                            <div className={'fade-in'}>
 ```
+
+
+
+also in globals.scss:
+
+```
+@import "~@coreui/coreui/dist/css/coreui.min.css";
+@import "~@coreui/nextjs/es/styles.css";
+```
+
+default styles in globals.scss:
+```
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		sans-serif;
+}
+
+
+a {
+	text-decoration: none;
+	background-color: transparent;
+	color: #321fdb
+}
+
+@media (hover: hover),(-ms-high-contrast: none) {
+	a:hover {
+		text-decoration: underline;
+		color: #321fdb
+	}
+}
+
+a:not([href]) {
+	color: inherit;
+	text-decoration: none
+}
+
+@media (hover: hover),(-ms-high-contrast: none) {
+	a:not([href]):hover {
+		color: inherit;
+		text-decoration: none
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: sans-serif;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 21, 0)
+}
+
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	font-size: .875rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: left;
+	color: #3c4b64;
+	background-color: #ebedef
+}
+```
+### dependencies:
+on library:
+```
+    "nwb": "^0.25.2",
+    "@coreui/icons": "^2.0.0-rc.0",
+    "@coreui/utils": "~1.3.1",
+    "@popperjs/core": "^2.9.1",
+    "classnames": "~2.2.6",
+    "core-js": "^3.9.1",
+    "path-to-regexp": "^6.2.0",
+    "perfect-scrollbar": "~1.5.0",
+    "react-transition-group": "~4.4.1",
+    "tippy.js": "^6.3.1"
+```
+on project:
+```
+    "next": "10.0.9",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.32.8",
+    "@coreui/coreui": "^3.4.0",
+    "@coreui/nextjs": "file:coreui-nextjs-3.4.6.tgz",
+```
+
+### differences between coreui/nextjs & coreui/react:
+
+1) affected components for compatibility with next:
+
+CDataTable.js 
+
+CScrollbar.js
+
+CToast.js
+
+CTooltip.js
+
+(used css modules inside node_modules , now refs: there is exported styles.css for all needed styles)
+
+
+
+2) used react-router-dom , now uses next/router and next/link:
+
+CBreadcrumbRouter.js 
+
+CLink.js
+
+CSidebarNavItem.js
+
+(i used some logic from NavLink component, and react-router-dom matchPath / path-to-regexp)
+
+
+
+3) had circular reference with index.js, fixed with local refs:
+
+CProgress.js
+
+CProgressBar.js
+
+CSidebarNavDropdown.js
+
+
+4) used useLayoutEffect() now uses useEffect() in
+
+CDropdownMenu.js
+  
+
+
+
+
+
+###### Over 90 bootstrap based React components and directives
+
+##### For library guide please visit our [Documentation site »](https://coreui.io/react/docs)
+
+Check out demo of components usage: [CoreUI React Admin Template »](https://coreui.io/react/demo)
+
+![Template](https://coreui.io/images/github/vue-free-template-3.gif)
+
+
 #### Styling
 
 Components are styled using @coreui/coreui CSS library, but you can use them also with bootstrap CSS library. That is possible because @coreui/coreui library is compatible with bootstrap, it just extends its functionalities. The only exception is custom CoreUI components, which don't exist in the Bootstrap ecosystem (template components, callout, switch).
