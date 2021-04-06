@@ -4,7 +4,6 @@ import classNames from 'classnames'
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import {matchPath} from '../breadcrumb/CBreadcrumbRouter';
 
 
 //component - CoreUI / CLink
@@ -71,25 +70,14 @@ const CLink = props => {
     NavLink.propTypes = {
         activeClassName: PropTypes.string,
     }
-    const escapedPath = to;
+
     if(to){
         const router = useRouter();
-        const escapedPath =
-            to && to.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
 
         //to = encodeURIComponent(to) //for dynamic routes segments
 
-        const match = escapedPath
-            ? matchPath(router.pathname, {
-                path: escapedPath,
-                exact:false,
-                sensitive:false,
-                strict:false
-            })
-            : null;
 
-        const isActive = match ||
-            (router.pathname === escapedPath || router.pathname === escapedPath);
+        const isActive = (router.pathname === to || router.asPath === to);
 
          classes = classNames(
             isActive && 'active',
@@ -98,9 +86,10 @@ const CLink = props => {
         )
     }
 
+    //todo support as={slug} dynamic route
   return to ? (
     <NavLink
-      href = {escapedPath}
+      href = {to}
 //      as = {escapedPath}
       activeClassName={rest.activeClassName || 'active'}
       description={"link"}
