@@ -175,7 +175,6 @@ on library:
     "@popperjs/core": "^2.9.1",
     "classnames": "~2.2.6",
     "core-js": "^3.9.1",
-    "path-to-regexp": "^6.2.0",
     "perfect-scrollbar": "~1.5.0",
     "react-transition-group": "~4.4.1",
     "tippy.js": "^6.3.1"
@@ -214,7 +213,6 @@ CLink.js
 
 CSidebarNavItem.js
 
-(i used some logic from NavLink component, and react-router-dom matchPath / path-to-regexp)
 
 
 
