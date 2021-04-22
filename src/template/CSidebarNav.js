@@ -20,13 +20,15 @@ const CSidebarNav = props => {
 
   //state
 
-  const isRtl = getComputedStyle(document.querySelector('html')).direction === 'rtl'
+let isInSSR =  typeof window === 'undefined';
+  const isRtl = isInSSR ?false: window.getComputedStyle(window.document.documentElement).direction === 'rtl';
+  //getComputedStyle(document.querySelector('html')).direction === 'rtl'
   return <CScrollbar
-    settings={{ suppressScrollX: !isRtl }} 
-    className={navClasses} 
+    settings={{ suppressScrollX: !isRtl }}
+    className={navClasses}
     innerRef={innerRef}
     switcher={scrollbarExist}
-    tag="ul" 
+    tag="ul"
     {...attributes}
   />
 }

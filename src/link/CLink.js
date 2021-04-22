@@ -17,6 +17,7 @@ const CLink = props => {
     href,
     onClick,
     disabled,
+      text,
     ...rest
   } = props
 
@@ -62,13 +63,16 @@ const CLink = props => {
                     {/*className: className || null,*/}
                 {/*})}*/}
 
-                <a style={{textDecoration:"none"}} className={className || null}>{description}</a>
+                <a style={{textDecoration:"none"}} className={className || null}>
+
+                    <small>{description}</small></a>
             </Link>
         )
     }
 
     NavLink.propTypes = {
         activeClassName: PropTypes.string,
+        description: PropTypes.string,
     }
 
     if(to){
@@ -92,7 +96,7 @@ const CLink = props => {
       href = {to}
 //      as = {escapedPath}
       activeClassName={rest.activeClassName || 'active'}
-      description={"link"}
+      description={text||"link"}
       className={classes}
       onClick={click}
       ref={innerRef}
@@ -114,6 +118,7 @@ CLink.propTypes = {
   innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   active: PropTypes.bool,
   href: PropTypes.string,
+    text:PropTypes.string,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
   activeClassName: PropTypes.string, //use like: <CLink to="/faq" activeClassName="selected">

@@ -11,6 +11,7 @@ const CHeaderNavLink = props => {
     className,
     //
     innerRef,
+      text,
     ...rest
   } = props
 
@@ -22,7 +23,7 @@ const CHeaderNavLink = props => {
   )
 
   return (
-    <CLink className={classes} {...rest} innerRef={innerRef} />
+    <CLink className={classes} text={text} {...rest} innerRef={innerRef} />
   )
 
 }
@@ -30,7 +31,8 @@ const CHeaderNavLink = props => {
 CHeaderNavLink.propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object]),
   //
-  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
+  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+      text:PropTypes.string
 };
 
 

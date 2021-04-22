@@ -102,8 +102,31 @@ const CSidebar = props => {
     }
   }
 
+  function getWindow(node) {
+    if (node == null) {
+      return window;
+    }
+
+    if (node.toString() !== '[object Window]') {
+      var ownerDocument = node.ownerDocument;
+      return ownerDocument ? ownerDocument.defaultView || window : window;
+    }
+
+    return node;
+  }
+  function getComputedStyle(element) {
+    let isInSSR =  typeof window === 'undefined';
+    if(isInSSR)
+      return  null;
+    return getWindow(element).getComputedStyle(element);
+  }
+
   const isOnMobile = () => {
-    return Boolean(getComputedStyle(node.current).getPropertyValue('--is-mobile'))
+    let cStyle=getComputedStyle(node.current);
+    if(cStyle == null)
+      return Boolean(false);
+
+    return Boolean(cStyle.getPropertyValue('--is-mobile'))
   }
 
   const isAutoclosable = () => isOnMobile() || overlaid
@@ -111,7 +134,7 @@ const CSidebar = props => {
   const onSidebarClick = e => {
     const sidebarItemClicked = String(e.target.className).includes('c-sidebar-nav-link')
     if (
-        sidebarItemClicked && 
+        sidebarItemClicked &&
         hideOnMobileClick &&
         isAutoclosable()
       ) {
@@ -140,7 +163,7 @@ const CSidebar = props => {
       dropdownMode,
       scrollbarExist: !minimized || unfoldable,
       toggleMinimize,
-      openDropdown, 
+      openDropdown,
       setOpenDropdown
     }}>
       <div

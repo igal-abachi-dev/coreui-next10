@@ -23,6 +23,7 @@ const CSidebarNavItem = props => {
     addLinkClass,
     label,
     color,
+    text,
     ...rest
   } = props
 
@@ -43,7 +44,7 @@ const CSidebarNavItem = props => {
     <li className={classes} ref={innerRef}>
       { children ||
         <CLink
-          className={linkClasses}
+          className={linkClasses} text={text || 'link'}
           {...routerLinkProps}
           {...rest}
           tabIndex={ isOpen === false ? -1 : 0 }
@@ -64,6 +65,7 @@ CSidebarNavItem.propTypes = {
   innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   fontIcon: PropTypes.string,
+  text: PropTypes.string,
   badge: PropTypes.object,
   addLinkClass: PropTypes.string,
   label: PropTypes.bool,
