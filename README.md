@@ -91,7 +91,7 @@ import {
 also in globals.scss:
 
 ```
-@import "~@coreui/coreui/dist/css/coreui.min.css";
+@import "~@coreui/coreui-pro/dist/css/coreui.min.css";
 @import "~@coreui/nextjs/es/styles.css";
 ```
 
@@ -185,7 +185,7 @@ on project:
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.32.8",
-    "@coreui/coreui": "^3.4.0",
+    "@coreui/coreui-pro": "^3.4.0",
     "@coreui/nextjs": "file:coreui-nextjs-3.4.6.tgz",
 ```
 
